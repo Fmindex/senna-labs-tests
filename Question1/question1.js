@@ -54,7 +54,7 @@ const getAllBNKMembersPicture = async () => {
 
 const downloadAllBNKMembersPicture = async () => {
   const allMembersPicture = await getAllBNKMembersPicture()
-  Promise.all(
+  await Promise.all(
     allMembersPicture.map(async ({ name, pictureUrl }) => {
       await downloadPicture(name, pictureUrl)
     })
